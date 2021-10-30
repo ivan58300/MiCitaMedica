@@ -81,8 +81,8 @@ public class UIMenuPaciente {
             }
 
             System.out.println("Dr. " + doctorSeleccionado.getNombre() +
-                    ". Date: " + doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getFecha() +
-                    ". Time: " + doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getHora() +
+                    ". Fecha: " + doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getFecha() +
+                    ". Hora: " + doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getHora() +
                     "\n");
 
             System.out.println("Confirma tu cita: \n1. Confirmar.\n2. Cambiar Fecha.");
@@ -90,9 +90,9 @@ public class UIMenuPaciente {
 
             if (respuesta == 1){
                 UIMenu.pacienteRegistrado.addDoctorCitas(doctorSeleccionado,
-                        doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getDate(null),
+                        doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getDate(),
                         doctorSeleccionado.getCitaDisponibles().get(fechaIndice).getHora());
-                mostrarMenuPaciente();
+                ui.UIMenuPaciente.mostrarMenuPaciente();
 
             }
         }while(respuesta != 0);
@@ -120,6 +120,7 @@ public class UIMenuPaciente {
             System.out.println("0. Regresar. ");
             response = Integer.valueOf(sc.nextLine());
         }while(response != 0);
+
     }
 }
 

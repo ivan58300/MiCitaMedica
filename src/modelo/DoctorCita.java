@@ -48,7 +48,7 @@ public class DoctorCita implements IProgramable{
     }
 
     public String getHora() {
-        return hora + "hrs.";
+        return hora + " hrs.";
     }
 
     public void setHora(String hora) {

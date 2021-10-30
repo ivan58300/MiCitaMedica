@@ -26,6 +26,7 @@ public class UIMenuDoctor {
                     mostrarMenuAgregarCitasDisponibles();
                     break;
                 case 2:
+
                     break;
                 case 0:
                     UIMenu.mostrarMenu();

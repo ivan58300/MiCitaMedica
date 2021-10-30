@@ -27,15 +27,15 @@ public class UIMenu {
 
             switch (respuesta){
                 case 1:
-                    System.out.println("Doctor");
                     respuesta = 0;
-                    authUser(1);
+                    verificarUsuario(1);
                     break;
                 case 2:
                     respuesta = 0;
-                    authUser(2);
+                    verificarUsuario(2);
                     break;
                 case 0:
+                    respuesta = 0;
                     System.out.println("Thank you for you visit");
                     break;
                 default:
@@ -44,37 +44,7 @@ public class UIMenu {
         }while (respuesta != 0);
     }
 
-    public static void mostrarMenuPaciente(){
-        int respuesta = 0;
-        do {
-            System.out.println("\n\n");
-            System.out.println("1. Reservar una cita");
-            System.out.println("2. Mi cita");
-            System.out.println("0. Regresar");
-
-            Scanner sc = new Scanner(System.in);
-            respuesta = Integer.valueOf(sc.nextLine());
-
-            switch (respuesta){
-                case 1:
-                    System.out.println("::Reservar una cita");
-                    for( int i = 1; i < 4; i++) {
-                        System.out.println(i + ". " + MESES[i]);
-                    }
-                    break;
-                case 2:
-                    System.out.println("::Mi cita");
-                    break;
-                case 0:
-                    mostrarMenu();
-                    break;
-            }
-        }while (respuesta != 0);
-    }
-    //cambiar costructores de paciente y doctor
-    //agregar los tres parametros ususario, contr, status
-
-    private static void authUser(int tipoUsuario ){
+    private static void verificarUsuario(int tipoUsuario ){
         //tipoUsuario = 1 Doctor
         //tipoUsuario = 2 paciente
 
