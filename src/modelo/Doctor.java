@@ -1,5 +1,7 @@
 package modelo;
 
+import sun.management.counter.StringCounter;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,8 +12,9 @@ public class Doctor extends Usuario {
     //Atributos
     private String especialidad;
 
-    public Doctor(String nombre, String email){
-        super(nombre, email);
+    public Doctor(String nombre, String email, String direccion, String numeroTel, String contrasena, boolean estatus, String especialidad) {
+        super(nombre, email, direccion, numeroTel, contrasena, estatus);
+        this.especialidad = especialidad;
     }
     public Doctor(){
     }
@@ -24,7 +27,7 @@ public class Doctor extends Usuario {
         this.especialidad = especialidad;
     }
 
-    public void agregarCitasDisponibles(String fecha, String hora){
+    public void agregarCitasDisponibles(String fecha, String hora) {
         citaDisponibles.add(new CitaDisponible(fecha,hora));
     }
     public ArrayList<CitaDisponible> getCitaDisponibles(){
@@ -74,7 +77,7 @@ public class Doctor extends Usuario {
         }
 
         public String getHora() {
-            return hora;
+            return hora + " Hrs.";
         }
 
         public void setHora(String hora) {
